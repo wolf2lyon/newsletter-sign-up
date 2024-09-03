@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div
+      id="form"
+      class="m-auto align-items-center justify-content-center d-lg-flex justify-content-lg-center align-items-lg-center"
+    >
+      <div class="wrapper-layout d-flex justify-content-center align-items-center flex-column flex-lg-row-reverse">
+        <!-- Sign-up form start -->
+        <nav class="d-block m-auto nav">
+          <img
+            src="./assets/images/illustration-sign-up-mobile.svg"
+            alt="illustration-sign-up-mobile"
+            class="nav-image d-block m-auto w-100 d-lg-none"
+          />
+          <img
+            src="./assets/images/illustration-sign-up-desktop.svg"
+            alt="illustration-sing-up-desktop"
+            class="aside-image d-none d-lg-block"
+          />
+        </nav>
+        <main class="form-container m-auto mt-5 mb-5 mt-lg-auto mb-lg-auto m-lg-auto"  >
+          <h1 class="text-dark form__title">Stay updated!</h1>
+          <p class="fs-6">
+            Join 60,000+ product managers receiving monthly updates on:
+          </p>
+          <ul class="p-0 m-0">
+            <li class="d-flex gap-3">
+              <span
+                ><img src="./assets/images/icon-list.svg" alt="icon-list"
+              /></span>
+              <p class="fs-6">Product discovery and building what matters</p>
+            </li>
+            <li class="d-flex gap-3">
+              <span
+                ><img src="./assets/images/icon-list.svg" alt="icon-list"
+              /></span>
+              <p class="fs-6">Measuring to ensure updates are a success</p>
+            </li>
+            <li class="d-flex gap-3">
+              <span
+                ><img src="./assets/images/icon-list.svg" alt="icon-list"
+              /></span>
+              <p class="fs-6">And much more!</p>
+            </li>
+          </ul>
+          <form class="d-flex flex-column from-group__email m-auto mb-4 mt-4 position-relative">
+            <label for="email" class="mb-2 form-group__label"
+              >Email address
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="email@company.com"
+              class="p-3 rounded-3 from-group__input"
+            />
+            <span class="form-group__error text-primary position-absolute end-0 d-none" id="email-error">Valid email required</span>
+            <button
+            id="btn-submit"
+            type="button"
+            class="btn btn-dark btn-hover d-block m-auto mt-4"
+          >
+            Subscribe to monthly newsletter
+          </button>
+          </form>
+          
+          <!-- Sign-up form end -->
+        </main>
+      </div>
+    </div>
+
+    <div id="spinner" class="d-none justify-content-center align-items-center bg-white">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    <div
+      id="popup-success"
+      class="d-none flex-column align-items-center justify-content-center"
+    >
+      <!-- Success message start -->
+      <div class="cover-popup flex-column align-items-center justify-content-center rounded-5">
+        <div class="popup-container d-flex flex-column gap-2 p-4 p-lg-6">
+          <img
+            src="./assets/images/icon-success.svg"
+            alt="icon-success"
+            width="67"
+            height="67"
+            class="mb-3 mt-5 mt-lg-0"
+          />
+          <h2 class="text-dark popup__title">Thanks for <br />subscribing!</h2>
+          <p>
+            A confirmation email has been sent to <br />
+            <strong>ash@loremcompany.com.</strong> Please open it and <br class="d-lg-none" />
+            click <br class="d-none d-lg-block" /> the button inside to confirm your <br class="d-lg-none"/>
+            subscription.
+          </p>
+          <div class="w-100 h-100 d-flex align-items-end align-items-lg-start">
+            <button
+              id="btn-dismiss"
+              type="button"
+              class="btn btn-dark btn-hover d-block"
+            >
+              Dismiss message
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./js/index.js"></script>
+</html>

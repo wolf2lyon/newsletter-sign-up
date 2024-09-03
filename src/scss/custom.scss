@@ -1,0 +1,403 @@
+// Required
+@import "../../node_modules/bootstrap/scss/functions";
+
+$primary: hsl(4, 100%, 67%);
+$secondary: hsl(235, 18%, 26%);
+$light: hsl(231, 7%, 60%);
+$dark: hsl(234, 29%, 20%);
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+@import "../../node_modules/bootstrap/scss/variables";
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 4,
+);
+@import "../../node_modules/bootstrap/scss/variables-dark";
+
+@import "../../node_modules/bootstrap/scss/maps";
+
+@import "../../node_modules/bootstrap/scss/mixins";
+
+@font-face {
+  font-family: "RobotoRegular";
+  src: url(../assets/fonts/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: "RobotoBold";
+  src: url(../assets/fonts/Roboto-Bold.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "RobotoRegular";
+  font-size: 16px;
+}
+
+.popup__title {
+  font-family: "RobotoBold";
+}
+
+/*main*/
+.nav {
+  max-width: 23.4375rem;
+}
+
+.form__title {
+  font-family: "RobotoBold";
+}
+
+.form-container {
+  width: 100%;
+  max-width: 20.625rem;
+  margin-left: 1.5625rem;
+}
+
+/*Input*/
+
+.form-group__label {
+  font-size: 0.625rem;
+  font-family: "RobotoBold";
+}
+.from-group__email {
+  width: 100%;
+  max-width: 20.625rem;
+}
+.form-group__error {
+  font-size: 0.625rem;
+  font-family: "RobotoBold";
+}
+.from-group__input {
+  border: 0.0625rem solid $light;
+  color: $light;
+  &::placeholder {
+    color: $light;
+  }
+  &:focus-visible {
+    border-color: $dark;
+    outline: none;
+  }
+}
+
+/*Button*/
+.btn-hover {
+  height: 3.5rem;
+  width: 100%;
+  max-width: 20.625rem;
+}
+
+/*Spinner*/
+
+#spinner {
+  height: 80vh;
+}
+
+/*popup-success*/
+
+#popup-success {
+  height: 100vh;
+}
+.cover-popup {
+  height: 100vh;
+}
+.popup__title {
+  font-size: 2rem;
+}
+.popup-success {
+  height: 90vh;
+}
+.popup-container {
+  height: 90%;
+}
+
+#btn-dismiss {
+  bottom: 0;
+  margin: 0 auto;
+}
+
+@media (max-width: 350px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .btn-hover {
+    &:hover {
+      background: rgb(255, 97, 86);
+      background: linear-gradient(
+        89deg,
+        rgba(255, 97, 86, 1) 30%,
+        rgba(234, 140, 133, 1) 100%
+      );
+      box-shadow: 0px 10px 28px -8px rgb(255, 97, 86);
+      border: none;
+    }
+  }
+  #form {
+    height: 100vh;
+  }
+  #spinner {
+    height: 100vh;
+  }
+  .wrapper-layout {
+    min-width: 920px;
+    min-height: 650px;
+    background-color: $white;
+    border-radius: 25px;
+  }
+  body {
+    overflow-y: hidden;
+  }
+  .form-container {
+    max-width: 24.375rem;
+  }
+  .form__title {
+    font-size: 58px;
+  }
+  .btn-hover,
+  .from-group__email {
+    max-width: 100%;
+  }
+  .cover-popup {
+    min-width: 520px;
+    max-height: 520px;
+    background-color: white;
+  }
+  .popup__title {
+    font-size: 3rem;
+  }
+  .popup-container {
+    height: 100%;
+    padding: 3.75rem !important;
+    img {
+      width: 3.875rem;
+    }
+    
+  }
+
+}
+
+@import "../../node_modules/bootstrap/scss/root";
+@import "../../node_modules/bootstrap/scss/utilities";
+$utilities: map-merge(
+  $utilities,
+  (
+    // Reasignando los espaciadores
+    "margin":
+      (
+        responsive: true,
+        property: margin,
+        class: m,
+        values:
+          map-merge(
+            $spacers,
+            (
+              auto: auto,
+            )
+          ),
+      ),
+    "margin-x": (
+      responsive: true,
+      property: margin-right margin-left,
+      class: mx,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    "margin-y": (
+      responsive: true,
+      property: margin-top margin-bottom,
+      class: my,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    "margin-top": (
+      responsive: true,
+      property: margin-top,
+      class: mt,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    "margin-end": (
+      responsive: true,
+      property: margin-right,
+      class: me,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    "margin-bottom": (
+      responsive: true,
+      property: margin-bottom,
+      class: mb,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    "margin-start": (
+      responsive: true,
+      property: margin-left,
+      class: ms,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    // Negative margin utilities
+    "negative-margin":
+      (
+        responsive: true,
+        property: margin,
+        class: m,
+        values: $negative-spacers,
+      ),
+    "negative-margin-x": (
+      responsive: true,
+      property: margin-right margin-left,
+      class: mx,
+      values: $negative-spacers,
+    ),
+    "negative-margin-y": (
+      responsive: true,
+      property: margin-top margin-bottom,
+      class: my,
+      values: $negative-spacers,
+    ),
+    "negative-margin-top": (
+      responsive: true,
+      property: margin-top,
+      class: mt,
+      values: $negative-spacers,
+    ),
+    "negative-margin-end": (
+      responsive: true,
+      property: margin-right,
+      class: me,
+      values: $negative-spacers,
+    ),
+    "negative-margin-bottom": (
+      responsive: true,
+      property: margin-bottom,
+      class: mb,
+      values: $negative-spacers,
+    ),
+    "negative-margin-start": (
+      responsive: true,
+      property: margin-left,
+      class: ms,
+      values: $negative-spacers,
+    ),
+    // Padding utilities
+    "padding":
+      (
+        responsive: true,
+        property: padding,
+        class: p,
+        values: $spacers,
+      ),
+    "padding-x": (
+      responsive: true,
+      property: padding-right padding-left,
+      class: px,
+      values: $spacers,
+    ),
+    "padding-y": (
+      responsive: true,
+      property: padding-top padding-bottom,
+      class: py,
+      values: $spacers,
+    ),
+    "padding-top": (
+      responsive: true,
+      property: padding-top,
+      class: pt,
+      values: $spacers,
+    ),
+    "padding-end": (
+      responsive: true,
+      property: padding-right,
+      class: pe,
+      values: $spacers,
+    ),
+    "padding-bottom": (
+      responsive: true,
+      property: padding-bottom,
+      class: pb,
+      values: $spacers,
+    ),
+    "padding-start": (
+      responsive: true,
+      property: padding-left,
+      class: ps,
+      values: $spacers,
+    ),
+    // Gap utility
+    "gap":
+      (
+        responsive: true,
+        property: gap,
+        class: gap,
+        values: $spacers,
+      ),
+    "row-gap": (
+      responsive: true,
+      property: row-gap,
+      class: row-gap,
+      values: $spacers,
+    ),
+    "column-gap": (
+      responsive: true,
+      property: column-gap,
+      class: column-gap,
+      values: $spacers,
+    )
+  )
+);
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+@media (min-width: 992px) {
+  body {
+    background-color: $dark;
+  }
+}
